@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>История веба - WWW</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+    <style>
+    .normal {
+      background-color: #fff;
+      color: #000;
+      font-weight: normal;
+    }
+
+    .alternative {
+      background-color: #000;
+      color: #fff;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+&nbsp;<div class="text">
+    <main>
+      <h1 h1 onMouseOver="changeStat()" onmouseout="change()">Создание WWW</h1>
+        <p onMouseOver="style='color: rgb(125, 0, 0); font-weight: bold;'" onMouseOut="style='color: #000; font-weight: normal;'">WWW (Всемирная паутина) является самой популярной службой Интернета, но ее нельзя отождествлять со Всемирной паутиной. Идея ее создания была реализована за четыре года (1989-1992гг.) программистом Тимоти Джон Бернерс-Ли и его коллегами. Хотя, как это часто бывает, сделано это было вовсе не на пустом месте. Например, понятие "гипертекст" первым придумал американский ученый Тед Нельсон еще в 1965 году. Датой же рождения Интернета счиается 29 октября 1969 года, а писатели фантасты задолго предсказывали появление нечто подобного.</p>
+  
+        </details>&nbsp;<h2>Хронология становления веба</h2>
+          <p onmouseover="changeParagraphStyle(this)" onmouseout="restoreParagraphStyle(this)" class="news"><span class="date">25.12.1990 - </span>Первый в мире браузер</p>
+          <p class="news"><span class="date">06.08.1991 - </span>Первый в мире сайт</p>
+          <p class="news"><span class="date">01.10.1994 - </span>World Wide Web Consortium (W3C)</p>
+          <p class="news"><span class="date">17.10.1994 - </span>Perl 5</p>
+          <p class="news"><span class="date">Начало 1995 года - </span>Apache HTTP Server</p>
+          <p class="news"><span class="date">23.05.1995 - </span>MySQL</p>
+          <p class="news"><span class="date">08.06.1995 - </span>Personal Home Page (PHP 1.0)</p>
+          <p class="news"><span class="date">17.12.1996 - </span>Cascading Style Sheets (CSS1)</p>
+<table>
+        <tr>
+          <td class="normal" onmouseover="applyAlternativeStyle(this)" onmouseout="restoreNormalStyle(this)">Ячейка 1</td>
+          <td class="normal" onmouseover="applyAlternativeStyle(this)" onmouseout="restoreNormalStyle(this)">Ячейка 2</td>
+        </tr>
+        <tr>
+          <td class="normal" onmouseover="applyAlternativeStyle(this)" onmouseout="restoreNormalStyle(this)">Ячейка 3</td>
+          <td class="normal" onmouseover="applyAlternativeStyle(this)" onmouseout="restoreNormalStyle(this)">Ячейка 4</td>
+        </tr>
+      </table>
+    </main>
+  </div>
+<div><SCRIPT> document.write("Изменено " +document.lastModified) </SCRIPT> </div> 
+<div><INPUT type="button" value="Window" ; width:70px; height: 70px;" OnClick="WindStat()"></div>
+<div><INPUT type="button" value="Navigator" ; width: 70px; height: 70px;" OnClick=" alert('Тип браузера: '+ navigator.appCodeName + '\n' +
+'Название браузера: ' + navigator.appName + '\n' +
+'Версия браузера: ' + navigator.appVersion + '\n' +
+'Платформа: ' + navigator.platform + '\n' +
+'Язык браузера: ' + navigator.language + '\n');"></div>
+<div><INPUT type="button" value="Location" ; width: 70px; height: 70px;" OnClick="alert('Имя пользователя: ' + window.navigator.userAgent + '\n' + 'Адрес загруженного документа: ' + window.location.href);"></div>
+<div><INPUT type="button" value="Screen" ; width: 70px; height: 70px;" OnClick="Scren()"></div>
+<script>
+    function WindStat() {
+     alert("Текущая строка состояния: " + window.status);
+     window.status = "WinStatus is " + Math.floor(Math.random()* 100);
+    }
+</script>
+<script>
+function Scren() {
+      var screenInfo = "Ширина: " + window.screen.width + "\n" +
+                       "Высота: " + window.screen.height + "\n" +
+                       "Глубина цвета: " + window.screen.colorDepth + "\n" +
+                       "Ориентация: " + (window.screen.orientation.type);
+      var isConfirmed = confirm("Информация о параметрах экрана:\n\n" + screenInfo);
+	if (isConfirmed) {
+        alert(screenInfo);}
+}
+</script>
+<script>
+    function changeStat() {
+     window.status = "Читай текст!";
+     alert("Текущая строка состояния: " + window.status);
+    }
+</script>
+<script>
+    function change() {
+     window.status = "Продолжение работы";
+    }
+  </script>
+<script>
+function changeParagraphStyle(element) {
+      element.style.marginRight = "3cm"; 
+      element.style.textIndent = "2.5cm"; 
+    }
+    function restoreParagraphStyle(element) {
+      element.style.marginRight = "";
+      element.style.textIndent = ""; 
+    }
+</script>
+<script>
+    function applyAlternativeStyle(cell) {
+      cell.className = "alternative";
+    }
+
+    function restoreNormalStyle(cell) {
+      cell.className = "normal";
+    }
+  </script>
+</body>
+</html>
